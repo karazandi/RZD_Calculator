@@ -4,6 +4,6 @@ RZD_Calc_V1.00.01.py file is the first upload for calculator apps source code. I
 ## To be able to run the calculator app properly, please follow the following instructions <br/>
 1. Install Python from (https://www.python.org/downloads/) <br/>
 2. Install Pycharm from (https://www.jetbrains.com/pycharm/download/#section=windows) <br/>
-3. Install Pillow extension using command prompt after installed python using command prompt ***pip install Pillow*** <br/>
+3. Install Pillow extension after installing python using command prompt ***pip install Pillow*** <br/>
 4. Download and extract PIL folder from my repository to the same folder of python installation <br/>
 5. Copy source code and run using pycharm
