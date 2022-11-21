@@ -13,7 +13,7 @@ root.title("RZD Calculator Project")
 root.geometry("900x650")
 root.resizable(False, False)
 
-#Function Definition
+#General Function Definition
 def contact_wa():
     webbrowser.open_new(url="https://wa.me/6287874965587")
 
@@ -109,6 +109,7 @@ def begin():
     calc_opt_drop.grid(row=0, column=0, padx=10, pady=10)
     start_calc.grid(row=0, column=1, padx=10, pady=10)
 
+#Pipe Support Spacing Calculator Function Definition
 def code_sel(sel_code):
     sel_code=code_click.get()
     global des_fac
@@ -120,18 +121,6 @@ def code_sel(sel_code):
     if code=="ASME B31.8":
         lc_label.grid(row=1, column=0, pady=2)
         lc_drop.grid(row=1, column=1, columnspan=2, pady=2)
-
-def rc_code_sel(rc_sel_code):
-    rc_sel_code=rc_code_click.get()
-    global rc_des_fac
-    rc_code=str(rc_sel_code)
-    if rc_code=="ASME B31.4":
-        rc_lc_label.grid_remove()
-        rc_lc_drop.grid_remove()
-        rc_des_fac = float(0.72)
-    if rc_code=="ASME B31.8":
-        rc_lc_label.grid(row=1, column=0, pady=2)
-        rc_lc_drop.grid(row=1, column=1, columnspan=2, pady=2)
 
 def lc_sel(sel_lc):
     sel_lc=lc_click.get()
@@ -147,21 +136,6 @@ def lc_sel(sel_lc):
         des_fac=float(0.5)
     if lc=="Location Class 4":
         des_fac=float(0.4)
-
-def rc_lc_sel(rc_sel_lc):
-    rc_sel_lc=rc_lc_click.get()
-    rc_lc=str(rc_sel_lc)
-    global rc_des_fac
-    if rc_lc=="Location Class 1, Div. 1":
-        rc_des_fac=float(0.8)
-    if rc_lc=="Location Class 1, Div. 2":
-        rc_des_fac=float(0.72)
-    if rc_lc=="Location Class 2":
-        rc_des_fac=float(0.6)
-    if rc_lc=="Location Class 3":
-        rc_des_fac=float(0.5)
-    if rc_lc=="Location Class 4":
-        rc_des_fac=float(0.4)
 
 def class_sel(sel_class):
     sel_class=class_click.get()
@@ -187,31 +161,6 @@ def class_sel(sel_class):
         smys=float(70000*6894.76)
     if matclass=="API 5L X80":
         smys=float(80000*6894.76)
-
-def rc_class_sel(rc_sel_class):
-    rc_sel_class=rc_class_click.get()
-    rc_matclass=str(rc_sel_class)
-    global rc_smys
-    if rc_matclass=="API 5L Gr. A":
-        rc_smys=float(30000*6894.76)
-    if rc_matclass=="API 5L Gr. B":
-        rc_smys=float(35000*6894.76)
-    if rc_matclass=="API 5L X42":
-        rc_smys=float(42000*6894.76)
-    if rc_matclass=="API 5L X46":
-        rc_smys=float(46000*6894.76)
-    if rc_matclass=="API 5L X52":
-        rc_smys=float(52000*6894.76)
-    if rc_matclass=="API 5L X56":
-        rc_smys=float(56000*6894.76)
-    if rc_matclass=="API 5L X60":
-        rc_smys=float(60000*6894.76)
-    if rc_matclass=="API 5L X65":
-        rc_smys=float(65000*6894.76)
-    if rc_matclass=="API 5L X70":
-        rc_smys=float(70000*6894.76)
-    if rc_matclass=="API 5L X80":
-        rc_smys=float(80000*6894.76)
 
 def nps_sel(sel_nps):
     sel_nps=nps_click.get()
@@ -304,97 +253,6 @@ def nps_sel(sel_nps):
     if nps=="80":
         od=float(2032/1000)
 
-def rc_nps_sel(rc_sel_nps):
-    rc_sel_nps=rc_nps_click.get()
-    rc_nps=str(rc_sel_nps)
-    global rc_od
-    if rc_nps=="1/8":
-        rc_od=float(10.3/1000)
-    if rc_nps=="1/4":
-        rc_od=float(13.7/1000)
-    if rc_nps=="1 1/4":
-        rc_od=float(17.1/1000)
-    if rc_nps=="1/2":
-        rc_od=float(21.3/1000)
-    if rc_nps=="13/4":
-        rc_od=float(26.7/1000)
-    if rc_nps=="1":
-        rc_od=float(33.4/1000)
-    if rc_nps=="1 1/4":
-        rc_od=float(42.2/1000)
-    if rc_nps=="1 1/2":
-        rc_od=float(48.3/1000)
-    if rc_nps=="2":
-        rc_od=float(60.3/1000)
-    if rc_nps=="2 1/2":
-        rc_od=float(73/1000)
-    if rc_nps=="3":
-        rc_od=float(88.9/1000)
-    if rc_nps=="4":
-        rc_od=float(114.3/1000)
-    if rc_nps=="5":
-        rc_od=float(141.3/1000)
-    if rc_nps=="6":
-        rc_od=float(168.3/1000)
-    if rc_nps=="8":
-        rc_od=float(219.1/1000)
-    if rc_nps=="10":
-        rc_od=float(273/1000)
-    if rc_nps=="12":
-        rc_od=float(323.8/1000)
-    if rc_nps=="14":
-        rc_od=float(355.6/1000)
-    if rc_nps=="16":
-        rc_od=float(406.4/1000)
-    if rc_nps=="18":
-        rc_od=float(457/1000)
-    if rc_nps=="20":
-        rc_od=float(508/1000)
-    if rc_nps=="22":
-        rc_od=float(559/1000)
-    if rc_nps=="24":
-        rc_od=float(610/1000)
-    if rc_nps=="26":
-        rc_od=float(610/1000)
-    if rc_nps=="28":
-        rc_od=float(711/1000)
-    if rc_nps=="30":
-        rc_od=float(762/1000)
-    if rc_nps=="32":
-        rc_od=float(813/1000)
-    if rc_nps=="34":
-        rc_od=float(864/1000)
-    if rc_nps=="36":
-        rc_od=float(914/1000)
-    if rc_nps=="38":
-        rc_od=float(965/1000)
-    if rc_nps=="40":
-        rc_od=float(1016/1000)
-    if rc_nps=="42":
-        rc_od=float(1067/1000)
-    if rc_nps=="44":
-        rc_od=float(1118/1000)
-    if rc_nps=="46":
-        rc_od=float(1168/1000)
-    if rc_nps=="48":
-        rc_od=float(1219/1000)
-    if rc_nps=="52":
-        rc_od=float(1321/1000)
-    if rc_nps=="56":
-        rc_od=float(1422/1000)
-    if rc_nps=="60":
-        rc_od=float(1524/1000)
-    if rc_nps=="64":
-        rc_od=float(1626/1000)
-    if rc_nps=="68":
-        rc_od=float(1727/1000)
-    if rc_nps=="72":
-        rc_od=float(1829/1000)
-    if rc_nps=="76":
-        rc_od=float(1930/1000)
-    if rc_nps=="80":
-        rc_od=float(2032/1000)
-
 def excoat_sel(sel_excoat):
     sel_excoat=excoat_click.get()
     global excoat
@@ -448,34 +306,6 @@ def insul_sel(sel_insul):
         insul_density_label.grid(row=11, column=0, pady=2)
         insul_thk_entry.grid(row=10, column=1, columnspan=2, pady=2)
         insul_dens_entry.grid(row=11, column=1, columnspan=2, pady=2)
-
-def soil_sel(sel_soil):
-    sel_soil=str(rc_soil_click.get())
-
-def pavement_sel(sel_pavement):
-    sel_pavement=str(rc_pavement_click.get())
-
-def contactarea_sel(sel_contactarea):
-    sel_contactarea=str(rc_contactarea_click.get())
-    global contactareaofwheel
-    if sel_contactarea == "API Standard":
-        rc_contactarea_entry.grid_remove()
-        rc_contactareainput_label.grid_remove()
-        contactareaofwheel = float(0.092903)
-    if sel_contactarea == "User Defined":
-        rc_contactareainput_label.grid(row=16, column=0, pady=2)
-        rc_contactarea_entry.grid(row=16, column=1, columnspan=2, pady=2)
-
-def axleload_sel(sel_axleload):
-    sel_axleload=str(rc_axleload_click.get())
-    global axleload_selected
-    axleload_selected=sel_axleload
-    if sel_axleload == "User Defined":
-        rc_axleloadinput_label.grid(row=18, column=0, pady=2)
-        rc_axleload_entry.grid(row=18, column=1, columnspan=2, pady=2)
-    if sel_axleload == "API Standard":
-        rc_axleload_entry.grid_remove()
-        rc_axleloadinput_label.grid_remove()
 
 def sub_calc():
     supp_calc_result.pack(padx=10, pady=10)
@@ -576,6 +406,178 @@ def sub_calc():
     result_def_label = customtkinter.CTkLabel(supp_calc_result, text="Deflection Limited: ").grid(row=20, column=0, pady=2)
     result_sls_label = customtkinter.CTkLabel(supp_calc_result, text="Serviceability Limit State: ").grid(row=21, column=0, pady=2)
     result_uls_label = customtkinter.CTkLabel(supp_calc_result, text="Ultimate Limit State: ").grid(row=22, column=0, pady=2)
+
+#Road Crossing Calculator Function Definition
+def rc_code_sel(rc_sel_code):
+    rc_sel_code=rc_code_click.get()
+    global rc_des_fac
+    rc_code=str(rc_sel_code)
+    if rc_code=="ASME B31.4":
+        rc_lc_label.grid_remove()
+        rc_lc_drop.grid_remove()
+        rc_des_fac = float(0.72)
+    if rc_code=="ASME B31.8":
+        rc_lc_label.grid(row=1, column=0, pady=2)
+        rc_lc_drop.grid(row=1, column=1, columnspan=2, pady=2)
+
+def rc_lc_sel(rc_sel_lc):
+    rc_sel_lc=rc_lc_click.get()
+    rc_lc=str(rc_sel_lc)
+    global rc_des_fac
+    if rc_lc=="Location Class 1, Div. 1":
+        rc_des_fac=float(0.8)
+    if rc_lc=="Location Class 1, Div. 2":
+        rc_des_fac=float(0.72)
+    if rc_lc=="Location Class 2":
+        rc_des_fac=float(0.6)
+    if rc_lc=="Location Class 3":
+        rc_des_fac=float(0.5)
+    if rc_lc=="Location Class 4":
+        rc_des_fac=float(0.4)
+
+def rc_class_sel(rc_sel_class):
+    rc_sel_class=rc_class_click.get()
+    rc_matclass=str(rc_sel_class)
+    global rc_smys
+    if rc_matclass=="API 5L Gr. A":
+        rc_smys=float(30000*6894.76)
+    if rc_matclass=="API 5L Gr. B":
+        rc_smys=float(35000*6894.76)
+    if rc_matclass=="API 5L X42":
+        rc_smys=float(42000*6894.76)
+    if rc_matclass=="API 5L X46":
+        rc_smys=float(46000*6894.76)
+    if rc_matclass=="API 5L X52":
+        rc_smys=float(52000*6894.76)
+    if rc_matclass=="API 5L X56":
+        rc_smys=float(56000*6894.76)
+    if rc_matclass=="API 5L X60":
+        rc_smys=float(60000*6894.76)
+    if rc_matclass=="API 5L X65":
+        rc_smys=float(65000*6894.76)
+    if rc_matclass=="API 5L X70":
+        rc_smys=float(70000*6894.76)
+    if rc_matclass=="API 5L X80":
+        rc_smys=float(80000*6894.76)
+
+def rc_nps_sel(rc_sel_nps):
+    rc_sel_nps=rc_nps_click.get()
+    rc_nps=str(rc_sel_nps)
+    global rc_od
+    if rc_nps=="1/8":
+        rc_od=float(10.3/1000)
+    if rc_nps=="1/4":
+        rc_od=float(13.7/1000)
+    if rc_nps=="1 1/4":
+        rc_od=float(17.1/1000)
+    if rc_nps=="1/2":
+        rc_od=float(21.3/1000)
+    if rc_nps=="13/4":
+        rc_od=float(26.7/1000)
+    if rc_nps=="1":
+        rc_od=float(33.4/1000)
+    if rc_nps=="1 1/4":
+        rc_od=float(42.2/1000)
+    if rc_nps=="1 1/2":
+        rc_od=float(48.3/1000)
+    if rc_nps=="2":
+        rc_od=float(60.3/1000)
+    if rc_nps=="2 1/2":
+        rc_od=float(73/1000)
+    if rc_nps=="3":
+        rc_od=float(88.9/1000)
+    if rc_nps=="4":
+        rc_od=float(114.3/1000)
+    if rc_nps=="5":
+        rc_od=float(141.3/1000)
+    if rc_nps=="6":
+        rc_od=float(168.3/1000)
+    if rc_nps=="8":
+        rc_od=float(219.1/1000)
+    if rc_nps=="10":
+        rc_od=float(273/1000)
+    if rc_nps=="12":
+        rc_od=float(323.8/1000)
+    if rc_nps=="14":
+        rc_od=float(355.6/1000)
+    if rc_nps=="16":
+        rc_od=float(406.4/1000)
+    if rc_nps=="18":
+        rc_od=float(457/1000)
+    if rc_nps=="20":
+        rc_od=float(508/1000)
+    if rc_nps=="22":
+        rc_od=float(559/1000)
+    if rc_nps=="24":
+        rc_od=float(610/1000)
+    if rc_nps=="26":
+        rc_od=float(610/1000)
+    if rc_nps=="28":
+        rc_od=float(711/1000)
+    if rc_nps=="30":
+        rc_od=float(762/1000)
+    if rc_nps=="32":
+        rc_od=float(813/1000)
+    if rc_nps=="34":
+        rc_od=float(864/1000)
+    if rc_nps=="36":
+        rc_od=float(914/1000)
+    if rc_nps=="38":
+        rc_od=float(965/1000)
+    if rc_nps=="40":
+        rc_od=float(1016/1000)
+    if rc_nps=="42":
+        rc_od=float(1067/1000)
+    if rc_nps=="44":
+        rc_od=float(1118/1000)
+    if rc_nps=="46":
+        rc_od=float(1168/1000)
+    if rc_nps=="48":
+        rc_od=float(1219/1000)
+    if rc_nps=="52":
+        rc_od=float(1321/1000)
+    if rc_nps=="56":
+        rc_od=float(1422/1000)
+    if rc_nps=="60":
+        rc_od=float(1524/1000)
+    if rc_nps=="64":
+        rc_od=float(1626/1000)
+    if rc_nps=="68":
+        rc_od=float(1727/1000)
+    if rc_nps=="72":
+        rc_od=float(1829/1000)
+    if rc_nps=="76":
+        rc_od=float(1930/1000)
+    if rc_nps=="80":
+        rc_od=float(2032/1000)
+
+def soil_sel(sel_soil):
+    sel_soil=str(rc_soil_click.get())
+
+def pavement_sel(sel_pavement):
+    sel_pavement=str(rc_pavement_click.get())
+
+def contactarea_sel(sel_contactarea):
+    sel_contactarea=str(rc_contactarea_click.get())
+    global contactareaofwheel
+    if sel_contactarea == "API Standard":
+        rc_contactarea_entry.grid_remove()
+        rc_contactareainput_label.grid_remove()
+        contactareaofwheel = float(0.092903)
+    if sel_contactarea == "User Defined":
+        rc_contactareainput_label.grid(row=16, column=0, pady=2)
+        rc_contactarea_entry.grid(row=16, column=1, columnspan=2, pady=2)
+
+def axleload_sel(sel_axleload):
+    sel_axleload=str(rc_axleload_click.get())
+    global axleload_selected
+    axleload_selected=sel_axleload
+    if sel_axleload == "User Defined":
+        rc_axleloadinput_label.grid(row=18, column=0, pady=2)
+        rc_axleload_entry.grid(row=18, column=1, columnspan=2, pady=2)
+    if sel_axleload == "API Standard":
+        rc_axleload_entry.grid_remove()
+        rc_axleloadinput_label.grid_remove()
 
 def rc_calc():
     root.geometry("1200x700")
@@ -864,39 +866,50 @@ def rc_calc():
 
     rc_summary_label.grid(row=18,column=1,columnspan=2,pady=2)
 
-#LabelFrame Definition
+#Welcome Page LabelFrame Definition
 welcome=LabelFrame(root)
 welcome.pack(padx=10, pady=10)
 
+#Main Menu LabelFrame Definition
 calc_select=LabelFrame(root, text="Select Calculator Module", padx=5, pady=5)
+
+#Modul Definition LabelFrame Definition
 supp_calc_def=LabelFrame(root, text="Module Description", padx=5, pady=5)
 rc_calc_def=LabelFrame(root, text="Module Description", padx=5, pady=5)
 
+#Pipe Support Spacing Calculator LabelFrame Definition
 supp_calc_frame=LabelFrame(root, text="Pipe Support Spacing Calculator", padx=10, pady=10)
 supp_calc_result=LabelFrame(root, text="Calculation Results", padx=10, pady=10)
 
+#Road Crossing Calculatot LabelFrame Definition
 rc_calc_frame=LabelFrame(root, text="Road Crossing Calculator", padx=10, pady=10)
 rc_calc_result=LabelFrame(root, text="Calculation Results", padx=10, pady=10)
 
-#Frame Definition
+#Main Menu Frame Definition
 calc_opt_frame=Frame(calc_select)
+
+#Pipe Support Spacing Calculator Frame Definition
 supp_desc_frame=Frame(supp_calc_def, height=800, width=800)
+
+#Road Crossing Frame Definition
 rc_desc_frame=Frame(rc_calc_def, height=800, width=800)
 
-#Image Definition
+#Welcome Page Image Definition
 about=ImageTk.PhotoImage(Image.open("about.png"))
 about_label=Label(welcome, image=about, padx=10, pady=10)
 about_label.pack()
 
+#Pipe Support Spacing Calculator Image Definition
 desc_supp = ImageTk.PhotoImage(Image.open("suppdesc.png"))
 supp_desc_label = Label(supp_desc_frame, image=desc_supp, padx=10, pady=10)
 supp_desc_label.pack()
 
+#Road Crossing Calculator Image Definition
 desc_rc = ImageTk.PhotoImage(Image.open("rcdesc.png"))
 rc_desc_label = Label(rc_desc_frame, image=desc_rc, padx=10, pady=10)
 rc_desc_label.pack()
 
-#Label Definition
+#Pipe Support Spacing Label Definition
 code_label=customtkinter.CTkLabel(supp_calc_frame, text="Standard Code: ", padx=10).grid(row=0, column=0, pady=2)
 
 lc_label=customtkinter.CTkLabel(supp_calc_frame, text="Location Class: ")
@@ -921,6 +934,7 @@ incoat_density_label=customtkinter.CTkLabel(supp_calc_frame, text="Internal Coat
 
 deflection_label=customtkinter.CTkLabel(supp_calc_frame, text="Permissible Deflection at Midspan (mm): ").grid(row=15, column=0, pady=2)
 
+#Road Crossing Calculator Label Definition
 rc_code_label=customtkinter.CTkLabel(rc_calc_frame, text="Standard Code: ", padx=10).grid(row=0, column=0, pady=2)
 
 rc_lc_label=customtkinter.CTkLabel(rc_calc_frame, text="Location Class: ")
@@ -1030,7 +1044,7 @@ rc_pavement_op=["No Pavement", "Flexible Pavement", "Rigid Pavement"]
 rc_contactarea_op=["API Standard", "User Defined"]
 rc_axleload_op=["API Standard", "User Defined"]
 
-#Dropdown Definition
+#Pipe Support Spacing Calculator Dropdown Definition
 code_drop=customtkinter.CTkComboBox(supp_calc_frame, variable=code_click, values=code_op, command=code_sel).grid(row=0, column=1, columnspan=2, pady=2)
 lc_drop=customtkinter.CTkComboBox(supp_calc_frame, variable=lc_click, values=lc_op, command=lc_sel)
 class_drop=customtkinter.CTkComboBox(supp_calc_frame, variable=class_click, values=class_op, command=class_sel).grid(row=3, column=1, columnspan=2, pady=2)
@@ -1040,6 +1054,7 @@ insul_drop=customtkinter.CTkComboBox(supp_calc_frame, variable=insul_click, valu
 incoat_drop=customtkinter.CTkComboBox(supp_calc_frame, variable=incoat_click, values=incoat_op, command=incoat_sel).grid(row=12, column=1, columnspan=2, pady=2)
 calc_opt_drop = customtkinter.CTkComboBox(calc_opt_frame, variable=calc_opt_click, values=calc_opt_opt, command=calc_opt_sel, width=300)
 
+#Road Crossing Calculator Dropdown Definition
 rc_code_drop=customtkinter.CTkComboBox(rc_calc_frame, variable=rc_code_click, values=code_op, command=rc_code_sel).grid(row=0, column=1, columnspan=2, pady=2)
 rc_lc_drop=customtkinter.CTkComboBox(rc_calc_frame, variable=rc_lc_click, values=lc_op, command=rc_lc_sel)
 rc_class_drop=customtkinter.CTkComboBox(rc_calc_frame, variable=rc_class_click, values=class_op, command=rc_class_sel).grid(row=3, column=1, columnspan=2, pady=2)
@@ -1049,8 +1064,7 @@ rc_pavement_drop=customtkinter.CTkComboBox(rc_calc_frame, variable=rc_pavement_c
 rc_contactarea_drop=customtkinter.CTkComboBox(rc_calc_frame, variable=rc_contactarea_click, values=rc_contactarea_op, command=contactarea_sel).grid(row=15, column=1, columnspan=2, pady=2)
 rc_axleload_drop=customtkinter.CTkComboBox(rc_calc_frame, variable=rc_axleload_click, values=rc_axleload_op, command=axleload_sel).grid(row=17, column=1, columnspan=2, pady=2)
 
-
-#Entrybox Definition
+#Pipe Support Spacing Calculator Entrybox Definition
 thickness_entry=customtkinter.CTkEntry(supp_calc_frame, justify= CENTER, width=140)
 thickness_entry.grid(row=5, column=1, columnspan=2, pady=2)
 
@@ -1066,6 +1080,7 @@ insul_dens_entry=customtkinter.CTkEntry(supp_calc_frame, justify= CENTER, width=
 def_entry=customtkinter.CTkEntry(supp_calc_frame, justify= CENTER, width=140)
 def_entry.grid(row=15, column=1, columnspan=2, pady=2)
 
+#Road Crossing Calculator Entrybox Definition
 rc_thickness_entry=customtkinter.CTkEntry(rc_calc_frame, justify= CENTER, width=140)
 rc_thickness_entry.grid(row=5, column=1, columnspan=2, pady=2)
 
@@ -1106,22 +1121,22 @@ email=Image.open("email.png")
 email_logo=ImageTk.PhotoImage(email)
 
 
-#Button Definition
+#General Button Definition
 start=customtkinter.CTkButton(welcome, text="Start Calculator >>", corner_radius=5, command=begin)
 start.pack(side=RIGHT, padx=10, pady=10)
-
-submit_button=customtkinter.CTkButton(supp_calc_frame, corner_radius=5, text="Submit Data and Calculate!", command=sub_calc).grid(row=16, column=1, columnspan=2, pady=10)
-
-supp_backbutton=customtkinter.CTkButton(root, corner_radius=5, pady=5, text="Back to Main Menu", fg_color="gray75", command=back)
-rc_backbutton=customtkinter.CTkButton(root, corner_radius=5, pady=5, text="Back to Main Menu", fg_color="gray75", command=back)
 
 start_calc = customtkinter.CTkButton(calc_opt_frame, text="Select Module >>", corner_radius=5, command=calculator_start)
 
 wa_button=customtkinter.CTkButton(welcome, image=wa_logo, text="Contact Me!", fg_color="gray75", command=contact_wa).pack(side=LEFT, padx=10, pady=10)
 email_button=customtkinter.CTkButton(welcome, image=email_logo, text="Email Me!", fg_color="gray75", command=contact_email).pack(side=LEFT, padx=10, pady=10)
 
-rc_submit_button=customtkinter.CTkButton(rc_calc_frame, corner_radius=5, text="Submit Data and Calculate!", command=rc_calc).grid(row=20, column=2, pady=10)
+#Pipe Support Spacing Calculator Button Definition
+submit_button=customtkinter.CTkButton(supp_calc_frame, corner_radius=5, text="Submit Data and Calculate!", command=sub_calc).grid(row=16, column=1, columnspan=2, pady=10)
+supp_backbutton=customtkinter.CTkButton(root, corner_radius=5, pady=5, text="Back to Main Menu", fg_color="gray75", command=back)
 
+#Road Crossing Calculator Button Definition
+rc_submit_button=customtkinter.CTkButton(rc_calc_frame, corner_radius=5, text="Submit Data and Calculate!", command=rc_calc).grid(row=20, column=2, pady=10)
+rc_backbutton=customtkinter.CTkButton(root, corner_radius=5, pady=5, text="Back to Main Menu", fg_color="gray75", command=back)
 
 root.mainloop()
 
