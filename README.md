@@ -4,6 +4,6 @@ I hope the beta version will be available soon enough. Beta version will cover o
 ## To be able to run the calculator app properly, please follow these instructions <br/>
 1. Install Python from (https://www.python.org/downloads/) <br/>
 2. Install Pycharm from (https://www.jetbrains.com/pycharm/download/#section=windows) <br/>
-3. Install Pillow extension after installing python using command prompt ***pip install Pillow*** <br/>
+3. Install Pillow extension after installing python using command prompt ***pip install Pillow --target your/python/directory*** <br/>
 4. Download and extract **PIL.rar** and **Images.rar** from my repository to the same folder of python installation <br/>
 5. Copy source code and run using pycharm
