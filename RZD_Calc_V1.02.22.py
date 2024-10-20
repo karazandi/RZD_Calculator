@@ -10,13 +10,6 @@ customtkinter.set_default_color_theme("blue")  # Themes: blue (default), dark-bl
 
 root=customtkinter.CTk()
 root.title("RZD Calculator Project")
-screen_width = root.winfo_screenwidth()
-screen_height = root.winfo_screenheight()
-app_width = 900
-app_height = 650
-x = (screen_width / 2) - (app_width / 2)
-y = (screen_height / 2) - (app_height / 2)
-root.geometry(f'{app_width}x{app_height}+{int(x)}+{int(y)}')
 root.resizable(False, False)
 
 #General Function Definition
@@ -28,11 +21,9 @@ def contact_email():
 
 def back():
     #Window Reset
-    app_width = 600
-    app_height = 150
-    x = (screen_width / 2) - (app_width / 2)
-    y = (screen_height / 2) - (app_height / 2)
-    root.geometry(f'{app_width}x{app_height}+{int(x)}+{int(y)}')
+    x = root.winfo_x()
+    y = root.winfo_y()
+    root.geometry(f'+{int(x)}+{int(y)}')
 
     rc_calc_frame.pack_forget()
     rc_calc_result.pack_forget()
@@ -89,11 +80,9 @@ def back():
 def calculator_start(): #Function for opening calculator module
     sel_calc = str(calc_opt_click.get())
     if sel_calc == "Onshore Pipe Support Spacing Calculator":
-        app_width = 600
-        app_height = 900
-        x = (screen_width / 2) - (app_width / 2)
-        y = (screen_height / 2) - (app_height / 2)
-        root.geometry(f'{app_width}x{app_height}+{int(x)}+{int(y)}')
+        x = root.winfo_x()
+        y = root.winfo_y()
+        root.geometry(f'+{int(x)}+{int(y)}')
 
         calc_select.pack_forget()
         supp_calc_def.pack_forget()
@@ -103,11 +92,9 @@ def calculator_start(): #Function for opening calculator module
         supp_calc_frame.pack(side=TOP, padx=10, pady=10)
 
     if sel_calc == "Onshore Pipeline Road Crossing Calculator":
-        app_width = 800
-        app_height = 800
-        x = (screen_width / 2) - (app_width / 2)
-        y = (screen_height / 2) - (app_height / 2)
-        root.geometry(f'{app_width}x{app_height}+{int(x)}+{int(y)}')
+        x = root.winfo_x()
+        y = root.winfo_y()
+        root.geometry(f'+{int(x)}+{int(y)}')
 
         calc_select.pack_forget()
         supp_calc_def.pack_forget()
@@ -117,11 +104,9 @@ def calculator_start(): #Function for opening calculator module
         rc_calc_frame.pack(padx=10, pady=10, side=LEFT, anchor="n")
 
     if sel_calc == "Onshore Expansion Loop Calculator":
-        app_width = 600
-        app_height = 900
-        x = (screen_width / 2) - (app_width / 2)
-        y = (screen_height / 2) - (app_height / 2)
-        root.geometry(f'{app_width}x{app_height}+{int(x)}+{int(y)}')
+        x = root.winfo_x()
+        y = root.winfo_y()
+        root.geometry(f'+{int(x)}+{int(y)}')
 
         calc_select.pack_forget()
         supp_calc_def.pack_forget()
@@ -133,33 +118,27 @@ def calculator_start(): #Function for opening calculator module
 def calc_opt_sel(sel_calc): #Function for module description preview
     sel_calc=str(calc_opt_click.get())
     if sel_calc=="Onshore Pipe Support Spacing Calculator":
-        app_width = 900
-        app_height = 800
-        x = (screen_width / 2) - (app_width / 2)
-        y = (screen_height / 2) - (app_height / 2)
-        root.geometry(f'{app_width}x{app_height}+{int(x)}+{int(y)}')
+        x = root.winfo_x()
+        y = root.winfo_y()
+        root.geometry(f'+{int(x)}+{int(y)}')
 
         rc_calc_def.pack_forget()
         exloop_calc_def.pack_forget()
         supp_desc_frame.pack(padx=10, pady=10)
         supp_calc_def.pack()
     if sel_calc=="Onshore Pipeline Road Crossing Calculator":
-        app_width = 800
-        app_height = 700
-        x = (screen_width / 2) - (app_width / 2)
-        y = (screen_height / 2) - (app_height / 2)
-        root.geometry(f'{app_width}x{app_height}+{int(x)}+{int(y)}')
+        x = root.winfo_x()
+        y = root.winfo_y()
+        root.geometry(f'+{int(x)}+{int(y)}')
 
         supp_calc_def.pack_forget()
         exloop_calc_def.pack_forget()
         rc_desc_frame.pack(padx=10, pady=10)
         rc_calc_def.pack()
     if sel_calc == "Onshore Expansion Loop Calculator":
-        app_width = 1100
-        app_height = 750
-        x = (screen_width / 2) - (app_width / 2)
-        y = (screen_height / 2) - (app_height / 2)
-        root.geometry(f'{app_width}x{app_height}+{int(x)}+{int(y)}')
+        x = root.winfo_x()
+        y = root.winfo_y()
+        root.geometry(f'+{int(x)}+{int(y)}')
 
         supp_calc_def.pack_forget()
         rc_calc_def.pack_forget()
@@ -168,13 +147,12 @@ def calc_opt_sel(sel_calc): #Function for module description preview
 
 def begin():
     welcome.pack_forget()
-    app_width = 600
-    app_height = 150
-    x = (screen_width / 2) - (app_width / 2)
-    y = (screen_height / 2) - (app_height / 2)
-    root.geometry(f'{app_width}x{app_height}+{int(x)}+{int(y)}')
 
-    calc_select.pack(padx=10, pady=10)
+    x = root.winfo_x()
+    y = root.winfo_y()
+    root.geometry(f'+{int(x)}+{int(y)}')
+
+    calc_select.pack(anchor="nw", padx=10, pady=10)
     calc_opt_frame.pack(padx=10, pady=10)
     calc_opt_drop.grid(row=0, column=0, padx=10, pady=10)
     start_calc.grid(row=0, column=1, padx=10, pady=10)
